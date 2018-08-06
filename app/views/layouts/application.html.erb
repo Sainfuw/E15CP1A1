@@ -33,6 +33,12 @@
           <p><%= alert %></p>
         </div>
       <% end %>
+      <% if logged? %>
+        El usuario <%= current_user.email  %> esta logeado
+        <%= link_to 'Logout', session_path(current_user), method: :delete, class: "btn btn-primary" %>
+      <% else %>
+        El usuario no esta logeado
+      <% end %>
       <%= yield %>
     </div>
   </body>
