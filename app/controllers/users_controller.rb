@@ -18,6 +18,10 @@ class UsersController < ApplicationController
     end
   end
 
+  def histories
+    @histories = helpers.current_user.histories
+  end
+
   private
   def user_params
     params.require(:user).permit(:name, :email, :password)
